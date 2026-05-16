@@ -59,6 +59,14 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 MONGODB_URI=mongodb://localhost:27017
 ```
 
+For Vercel (or any production deployment), set `BETTER_AUTH_URL` and
+`NEXT_PUBLIC_APP_URL` to your deployed site URL, for example:
+
+```env
+BETTER_AUTH_URL=https://your-app.vercel.app
+NEXT_PUBLIC_APP_URL=https://your-app.vercel.app
+```
+
 ## Getting Started
 
 ```bash
