@@ -6,6 +6,7 @@ import { MdSearch, MdStar, MdClose } from "react-icons/md";
 import { BsBasket } from "react-icons/bs";
 
 const categoryOptions = ["All Categories", "Tropicals", "Succulents", "Pots & Planters", "Tools", "Soil & Fertilizers"];
+const sortOptions = ["default", "price-asc", "price-desc", "rating"];
 
 function StarRating({ rating }) {
   return (
@@ -22,10 +23,16 @@ function StarRating({ rating }) {
   );
 }
 
-export default function ResourcesCatalog({ products, initialCategory }) {
-  const [query, setQuery] = useState("");
-  const [category, setCategory] = useState(initialCategory || "All Categories");
-  const [sortBy, setSortBy] = useState("default");
+export default function ResourcesCatalog({ products, initialCategory, initialQuery, initialSort }) {
+  const normalizedCategory = initialCategory === "All" ? "All Categories" : initialCategory;
+  const startingCategory = categoryOptions.includes(normalizedCategory)
+    ? normalizedCategory
+    : "All Categories";
+  const startingSort = sortOptions.includes(initialSort) ? initialSort : "default";
+
+  const [query, setQuery] = useState(typeof initialQuery === "string" ? initialQuery : "");
+  const [category, setCategory] = useState(startingCategory);
+  const [sortBy, setSortBy] = useState(startingSort);
 
   const filtered = useMemo(() => {
     let results = products.filter((p) => {

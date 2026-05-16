@@ -9,6 +9,8 @@ export const metadata = {
 export default async function ProductsPage({ searchParams }) {
   const params = await searchParams;
   const initialCategory = params?.category || null;
+  const initialQuery = params?.q || "";
+  const initialSort = params?.sort || "default";
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -27,7 +29,12 @@ export default async function ProductsPage({ searchParams }) {
         </p>
       </div>
 
-      <ResourcesCatalog products={data} initialCategory={initialCategory} />
+      <ResourcesCatalog
+        products={data}
+        initialCategory={initialCategory}
+        initialQuery={initialQuery}
+        initialSort={initialSort}
+      />
     </div>
   );
 }
