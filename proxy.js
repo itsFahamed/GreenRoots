@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export function middleware(request) {
+export function proxy(request) {
   const { pathname, origin } = request.nextUrl;
   const sessionToken =
     request.cookies.get("better-auth.session_token") ||
