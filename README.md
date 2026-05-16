@@ -14,6 +14,7 @@ A modern plant and garden eCommerce platform where users can explore and purchas
 - **Plant Care Tips** — Practical watering, light, and pest-prevention guidance
 - **Featured Growers** — Showcase of 4 trusted plant suppliers and brands
 - **Protected Product Details** — Full product detail page accessible only when logged in
+- **Proxy Auth Guard** — Redirects unauthenticated users before protected routes render
 - **Authentication** — Email/password via BetterAuth
 - **User Profile** — View profile data (name, photo, email, join date)
 - **Update Information** — Edit display name and profile photo URL
