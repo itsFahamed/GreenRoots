@@ -5,11 +5,13 @@ import { toast } from "sonner";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { MdEmail, MdLock, MdLogin, MdYard } from "react-icons/md";
+import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
 
 export default function LoginPage() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [loading, setLoading] = useState(false);
+  const [socialLoading, setSocialLoading] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackURL = searchParams.get("callbackURL") || "/";
@@ -32,6 +34,23 @@ export default function LoginPage() {
       toast.error("Something went wrong. Try again.");
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function handleGoogleSignIn() {
+    setSocialLoading(true);
+    try {
+      const result = await signIn.social({
+        provider: "google",
+        callbackURL,
+      });
+      if (result?.error) {
+        toast.error(result.error.message || "Google sign in failed");
+      }
+    } catch {
+      toast.error("Something went wrong. Try again.");
+    } finally {
+      setSocialLoading(false);
     }
   }
 
@@ -88,6 +107,26 @@ export default function LoginPage() {
               {loading ? "Signing in..." : "Sign In"}
             </button>
           </form>
+
+          <div className="my-6 flex items-center gap-3">
+            <span className="h-px flex-1 bg-emerald-100" />
+            <span className="text-xs text-slate-400 font-semibold uppercase tracking-widest">Or</span>
+            <span className="h-px flex-1 bg-emerald-100" />
+          </div>
+
+          <button
+            type="button"
+            onClick={handleGoogleSignIn}
+            disabled={loading || socialLoading}
+            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-slate-700 bg-white border border-emerald-100 hover:border-emerald-300 hover:bg-emerald-50 transition-colors disabled:opacity-50 shadow-sm"
+          >
+            {socialLoading ? (
+              <span className="w-4 h-4 border-2 border-slate-300 border-t-slate-600 rounded-full animate-spin" />
+            ) : (
+              <FcGoogle />
+            )}
+            {socialLoading ? "Connecting..." : "Continue with Google"}
+          </button>
         </div>
 
         <p className="text-center text-slate-500 text-sm mt-6">

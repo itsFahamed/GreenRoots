@@ -16,6 +16,7 @@ A modern plant and garden eCommerce platform where users can explore and purchas
 - **Protected Product Details** — Full product detail page accessible only when logged in
 - **Proxy Auth Guard** — Redirects unauthenticated users before protected routes render
 - **Authentication** — Email/password via BetterAuth
+- **Social Login** — Google OAuth via BetterAuth
 - **User Profile** — View profile data (name, photo, email, join date)
 - **Update Information** — Edit display name and profile photo URL
 - **Responsive Design** — Fully responsive on mobile, tablet, and desktop
@@ -57,6 +58,8 @@ BETTER_AUTH_SECRET=your_secret_here
 BETTER_AUTH_URL=http://localhost:3000
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 MONGODB_URI=mongodb://localhost:27017
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 ```
 
 For Vercel (or any production deployment), set `BETTER_AUTH_URL` and
@@ -65,6 +68,13 @@ For Vercel (or any production deployment), set `BETTER_AUTH_URL` and
 ```env
 BETTER_AUTH_URL=https://your-app.vercel.app
 NEXT_PUBLIC_APP_URL=https://your-app.vercel.app
+```
+
+Also set the Google OAuth credentials in your deployment environment:
+
+```env
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 ```
 
 ## Getting Started
