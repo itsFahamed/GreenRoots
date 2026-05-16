@@ -4,7 +4,7 @@ A modern plant and garden eCommerce platform where users can explore and purchas
 
 ## Live URL
 
-> _Add your deployment URL here after hosting_
+https://green-roots-six.vercel.app/
 
 ## Key Features
 
