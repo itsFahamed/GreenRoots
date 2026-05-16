@@ -1,6 +1,6 @@
-# SunCart — Summer Essentials Store
+# GreenRoots — Urban Plant & Garden Shop
 
-A modern summer eCommerce platform where users can explore and purchase seasonal products like sunglasses, summer outfits, skincare, and beach accessories.
+A modern plant and garden eCommerce platform where users can explore and purchase rare tropicals, succulents, handcrafted pots, and precision garden tools.
 
 ## Live URL
 
@@ -8,17 +8,17 @@ A modern summer eCommerce platform where users can explore and purchase seasonal
 
 ## Key Features
 
-- **Summer Product Catalog** — Browse 8+ curated summer products across 5 categories
-- **Hero Slider** — Auto-rotating summer sale banner with "Summer Sale 50% OFF" and "Hot Deals 🔥"
-- **Popular Products** — Home page showcases 3 trending products with image, name, rating, price, and View Details
-- **Summer Care Tips** — Expert skincare, hydration, and sun protection tips
-- **Top Brands** — Showcase of 4 trusted summer brands
+- **Plant Product Catalog** — Browse 8+ curated plant essentials across 5 categories
+- **Hero Slider** — Auto-rotating showcase for tropicals, succulents, and tools
+- **Popular Products** — Home page highlights 3 trending items with image, rating, and pricing
+- **Plant Care Tips** — Practical watering, light, and pest-prevention guidance
+- **Featured Growers** — Showcase of 4 trusted plant suppliers and brands
 - **Protected Product Details** — Full product detail page accessible only when logged in
 - **Authentication** — Email/password via BetterAuth
 - **User Profile** — View profile data (name, photo, email, join date)
 - **Update Information** — Edit display name and profile photo URL
 - **Responsive Design** — Fully responsive on mobile, tablet, and desktop
-- **Orange/Amber Summer Theme** — Custom warm color palette with animate.css animations
+- **Emerald Botanical Theme** — Custom green palette with animate.css animations
 
 ## Tech Stack
 
