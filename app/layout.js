@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Toaster } from "sonner";
+import AppToaster from "@/app/Components/AppToaster/AppToaster";
 
 export const metadata = {
   title: "GreenRoots — Urban Plant & Garden Shop",
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="antialiased min-h-screen" style={{ backgroundColor: "#f0fdf4" }}>
         {children}
-        <Toaster position="bottom-right" />
+        <AppToaster />
       </body>
     </html>
   );
